@@ -1,13 +1,7 @@
-
-
-function greet() {
-    alert("index.js is connected");
-}
-
-function click() {
-    document.backgroundColor = "4DFF9A";
-}
-
-function release() {
-    document.backgrounColor = "FF4D6B";
+var sitting = false;
+var sittingColor = "40FF43";
+var standingColor = "FF4D6B";
+function toggleColor() {
+    document.backgroundColor = sitting ? sittingColor : standingColor;
+    sitting = !sitting;
 }
