@@ -115,9 +115,7 @@
 	function enqueue(quizzer) {
 		dequeue(quizzer);
 		standing.push(quizzer);
-		for (qi in quizzers) {
-			updateMessage(quizzers[qi]);
-		}
+		updateMessages();
 	}
 	
 	function dequeue(quizzer) {
@@ -126,11 +124,15 @@
 			standing.splice(index, 1);
 			forfeited.push(quizzer);
 		}
-		for (qi in quizzers) {
-			updateMessage(quizzers[qi]);
-		}
+		updateMessages();
 		if (standing.length == 0) {
 			forfeited = [];
+		}
+	}
+	
+	function updateMessages() {
+		for (let i = 0; i < quizzers.length; i++) {
+			updateMessage(quizzers[i]);
 		}
 	}
 	
