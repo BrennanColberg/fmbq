@@ -54,7 +54,7 @@
 				message.innerHTML = "";
 				// icon
 				let icon = document.createElement("img");
-				icon.src = "key_" + quizzer.keyCode + ".png";
+				icon.src = "keys/key_" + quizzer.keyCode + ".png";
 				icon.alt = "key #" + quizzer.keyCode;
 				icon.className = t == 0 ? "left" : "right"
 				
