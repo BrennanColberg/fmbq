@@ -72,9 +72,9 @@
 		}
 	}, false);
 	
-	function getQuizzer(team, index) {
+	function getQuizzer(teamIndex, index) {
 		let lights = document.getElementById("lights");
-		let team = lights.childNodes[team];
+		let team = lights.childNodes[teamIndex];
 		let quizzer = team.childNodes[index];
 		return quizzer;
 	}
