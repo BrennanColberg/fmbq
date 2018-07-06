@@ -9,6 +9,19 @@
 	let forfeited = [];
 	let asking = true;
 	
+	
+	// 	body
+	// 	lights
+	//		team
+	//			name
+	//			quizzer
+	//				[icon]
+	//				text
+	//					name
+	//					message
+	//				[icon]
+	
+	
 	window.addEventListener("load", function() {
 		let lights = document.getElementById("lights");
 		for (let t = 0; t < keys.length; t++) {
@@ -22,11 +35,13 @@
 			team.appendChild(teamName);
 			lights.appendChild(team);
 			for (let i = 0; i < teamKeys.length; i++) {
+				// setup
 				let quizzer = document.createElement("div");
 				quizzer.className = "quizzer";
 				quizzer.active = false;
 				quizzer.keyCode = teamKeys[i];
-				// name field
+				
+				// name
 				let quizzerName = document.createElement("input");
 				quizzerName.className = "name";
 				quizzerName.type = "text";
@@ -34,17 +49,24 @@
 				quizzerName.index = i;
 				quizzerName.onchange = updateName;
 				quizzerName.placeholder = "name";
-				quizzer.appendChild(quizzerName);
-				// order text
+				// message
 				let message = document.createElement("h2");
 				message.innerHTML = "";
+				// icon
+				let icon = document.createElement("img");
+				icon.src = "key_" + quizzer.keyCode + ".png";
+				icon.alt = "key #" + quizzer.keyCode;
+				icon.className = t == 0 ? "left" : "right"
+				
+				// incorporation into HTML
+				quizzer.appendChild(quizzerName);
+				quizzer.appendChild(icon);
 				quizzer.appendChild(message);
+				team.appendChild(quizzer);
+				quizzers.push(quizzer);
 				// listeners
 				document.addEventListener("keyup", function(event){jump(event, quizzer)});
 				document.addEventListener("keydown", function(event){sit(event, quizzer)});
-				// append to team
-				team.appendChild(quizzer);
-				quizzers.push(quizzer);
 			}
 		}
 	});
