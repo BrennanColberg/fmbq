@@ -1,3 +1,4 @@
+"use strict";
 (function() {
 
 	// [ q a z ] vs [ ] ' / ] (sides)
@@ -56,7 +57,7 @@
 				let icon = document.createElement("img");
 				icon.src = "keys/key_" + quizzer.keyCode + ".png";
 				icon.alt = "key #" + quizzer.keyCode;
-				icon.className = t == 0 ? "left" : "right"
+				icon.className = t == 0 ? "left" : "right";
 				
 				// incorporation into HTML
 				quizzer.appendChild(quizzerName);
@@ -65,8 +66,8 @@
 				team.appendChild(quizzer);
 				quizzers.push(quizzer);
 				// listeners
-				document.addEventListener("keyup", function(event){jump(event, quizzer)});
-				document.addEventListener("keydown", function(event){sit(event, quizzer)});
+				document.addEventListener("keyup", function(event){jump(event, quizzer);});
+				document.addEventListener("keydown", function(event){sit(event, quizzer);});
 			}
 		}
 	}, false);
