@@ -69,7 +69,7 @@
 				document.addEventListener("keydown", function(event){sit(event, quizzer)});
 			}
 		}
-	});
+	}, false);
 	
 	function getQuizzer(team, index) {
 		let lights = document.getElementById("lights");
