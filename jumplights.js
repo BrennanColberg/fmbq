@@ -81,6 +81,9 @@
 	function updateName() {
 		let quizzer = this.parentElement;
 		quizzer.active = this.value;
+		if (!quizzer.active) {
+			dequeue(quizzer);
+		}
 		updateLight(quizzer);
 	}
 	
