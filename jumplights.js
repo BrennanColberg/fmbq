@@ -1,5 +1,7 @@
 "use strict";
 (function() {
+	
+	const MAX_JUMPS_PER_QUESTION = 4;
 
 	// [ q a z ] vs [ ] ' / ] (sides)
 	const keys = [[81, 65, 90], [221, 222, 191]];
@@ -9,6 +11,7 @@
 	let standing = [];
 	let forfeited = [];
 	let asking = true;
+	let jumps = 0; // number of jumped players for current question
 	
 	
 	// 	body
@@ -114,7 +117,10 @@
 	
 	function enqueue(quizzer) {
 		dequeue(quizzer);
-		standing.push(quizzer);
+		if (jumps < MAX_JUMPS_PER_QUESTION) { // can't use standing.length due to sitting
+			standing.push(quizzer);
+			jumps++;
+		}
 		updateMessages();
 	}
 	
@@ -127,6 +133,7 @@
 		updateMessages();
 		if (standing.length == 0) {
 			forfeited = [];
+			jumps = 0;
 		}
 	}
 	
@@ -141,7 +148,7 @@
 		let message = "";
 		if (index == 0) {
 			message = "Answering";
-		} else if (index > 0 && index < 4) {
+		} else if (index > 0 && index < MAX_JUMPS_PER_QUESTION) {
 			message = "#" + index + " in line";
 		} else {
 			message = "";
