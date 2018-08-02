@@ -3,6 +3,7 @@
 	
 	const MAX_JUMPS_PER_QUESTION = 4;
 
+	// transitioning to using cookies (multiple pages)
 	// [ q a z ] vs [ ] ' / ] (sides)
 	const keys = [[81, 65, 90], [221, 222, 191]];
 	let reading = false;
