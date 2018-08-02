@@ -1,6 +1,10 @@
 body {
 	text-align: center;
 }
+h2 {
+	font-size: 200%;
+	font-weight: bold;
+}
 #lights {
 	display: flex;
 	justify-content: space-around;
@@ -9,6 +13,15 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+.name {
+	text-align: center;
+	height: 20%;
+	font-weight: bold;
+}
+
+
+/* TEAM DIV (in index.html) */
+
 .team {
 	display: flex;
 	justify-content: space-around;
@@ -17,6 +30,10 @@ body {
 	width: 45%;
 	height: 100%;
 	border: 0.5vw solid black
+}
+.team > .name {
+	padding: 5%;
+	font-size: 500%;
 }
 .quizzer {
 	position: relative;
@@ -28,6 +45,10 @@ body {
 	height: 33%;
 	border: 1px solid black;
 }
+
+
+/* QUIZZER DIV (in index.html) */
+
 .quizzer > div {
 	display: flex;
 	justify-content: space-around;
@@ -45,31 +66,18 @@ body {
 .quizzer.up > .name {
 	background-color: gray;
 }
-.name {
-	text-align: center;
-	height: 20%;
-	font-weight: bold;
-}
-.team > .name {
-	padding: 5%;
-	font-size: 500%;
-}
-.quizzer > .name {
-	width: 50%;
-	font-size: 200%;
-}
-h2 {
-	font-size: 200%;
-	font-weight: bold;
-}
-img {
+.quizzer > img {
 	position: absolute;
 	width: 4vw;
 	align-self: center;
 }
-img.left {
+.quizzer > img.left {
 	left: -5.75vw;
 }
-img.right {
+.quizzer > img.right {
 	right: -5.75vw;
+}
+.quizzer > .name {
+	width: 50%;
+	font-size: 200%;
 }
