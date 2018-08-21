@@ -1,83 +1,94 @@
 body {
-	text-align: center;
-}
-h2 {
-	font-size: 200%;
-	font-weight: bold;
-}
-#lights {
-	display: flex;
-	justify-content: space-around;
-	height: 97vh;
-	width: 90vw;
-	margin-left: auto;
-	margin-right: auto;
-}
-.name {
-	text-align: center;
-	height: 20%;
-	font-weight: bold;
+  text-align: center;
 }
 
+h2 {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+#lights {
+  display: flex;
+  justify-content: space-around;
+  height: 97vh;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name {
+  text-align: center;
+  height: 20%;
+  font-weight: bold;
+}
 
 /* TEAM DIV (in index.html) */
 
 .team {
-	display: flex;
-	justify-content: space-around;
-	align-items: stretch;
-	flex-direction: column;
-	width: 45%;
-	height: 100%;
-	border: 0.5vw solid black
-}
-.team > .name {
-	padding: 5%;
-	font-size: 500%;
-}
-.quizzer {
-	position: relative;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-direction: column;
-	width: 100%;
-	height: 33%;
-	border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: column;
+  width: 45%;
+  height: 100%;
+  border: 0.5vw solid black
 }
 
+.team>.name {
+  padding: 5%;
+  font-size: 500%;
+}
+
+.quizzer {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 33%;
+  border: 1px solid black;
+}
 
 /* QUIZZER DIV (in index.html) */
 
-.quizzer > div {
-	display: flex;
-	justify-content: space-around;
-	flex-direction: column;
+.quizzer>div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
+
 .quizzer.down {
-	background-color: lightgray;
+  background-color: lightgray;
 }
-.quizzer.down > .name {
-	background-color: lightgray;
+
+.quizzer.down>.name {
+  background-color: lightgray;
 }
+
 .quizzer.up {
-	background-color: gray;
+  background-color: gray;
 }
-.quizzer.up > .name {
-	background-color: gray;
+
+.quizzer.up>.name {
+  background-color: gray;
 }
-.quizzer > img {
-	position: absolute;
-	width: 4vw;
-	align-self: center;
+
+.quizzer>img {
+  position: absolute;
+  width: 4vw;
+  align-self: center;
 }
-.quizzer > img.left {
-	left: -5.75vw;
+
+.quizzer>img.left {
+  left: -5.75vw;
 }
-.quizzer > img.right {
-	right: -5.75vw;
+
+.quizzer>img.right {
+  right: -5.75vw;
 }
-.quizzer > .name {
-	width: 50%;
-	font-size: 200%;
+
+.quizzer>.name {
+  width: 50%;
+  font-size: 200%;
 }

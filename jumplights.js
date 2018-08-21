@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-	
+
 	const MAX_JUMPS_PER_QUESTION = 4;
 
 	// transitioning to using cookies (multiple pages)
@@ -13,8 +13,8 @@
 	let forfeited = [];
 	let asking = true;
 	let jumps = 0; // number of jumped players for current question
-	
-	
+
+
 	// 	body
 	// 	lights
 	//		team
@@ -25,8 +25,8 @@
 	//					name
 	//					message
 	//				[icon]
-	
-	
+
+
 	window.addEventListener("load", function() {
 		let lights = document.getElementById("lights");
 		for (let t = 0; t < keys.length; t++) {
@@ -45,7 +45,7 @@
 				quizzer.className = "quizzer";
 				quizzer.active = false;
 				quizzer.keyCode = teamKeys[i];
-				
+
 				// name
 				let quizzerName = document.createElement("input");
 				quizzerName.className = "name";
@@ -62,7 +62,7 @@
 				icon.src = "keys/key_" + quizzer.keyCode + ".png";
 				icon.alt = "key #" + quizzer.keyCode;
 				icon.className = t == 0 ? "left" : "right";
-				
+
 				// incorporation into HTML
 				quizzer.appendChild(quizzerName);
 				quizzer.appendChild(icon);
@@ -70,19 +70,23 @@
 				team.appendChild(quizzer);
 				quizzers.push(quizzer);
 				// listeners
-				document.addEventListener("keyup", function(event){jump(event, quizzer);});
-				document.addEventListener("keydown", function(event){sit(event, quizzer);});
+				document.addEventListener("keyup", function(event) {
+					jump(event, quizzer);
+				});
+				document.addEventListener("keydown", function(event) {
+					sit(event, quizzer);
+				});
 			}
 		}
 	}, false);
-	
+
 	function getQuizzer(teamIndex, index) {
 		let lights = document.getElementById("lights");
 		let team = lights.childNodes[teamIndex];
 		let quizzer = team.childNodes[index];
 		return quizzer;
 	}
-	
+
 	function updateName() {
 		let quizzer = this.parentElement;
 		quizzer.active = this.value;
@@ -91,7 +95,7 @@
 		}
 		updateLight(quizzer);
 	}
-	
+
 	function updateLight(quizzer) {
 		if (quizzer.active) {
 			quizzer.className = "quizzer down";
@@ -99,7 +103,7 @@
 			quizzer.className = "quizzer";
 		}
 	}
-	
+
 	function jump(event, quizzer) {
 		if (event.keyCode == quizzer.keyCode && quizzer.active) {
 			quizzer.className = "quizzer up";
@@ -108,14 +112,14 @@
 			}
 		}
 	}
-	
+
 	function sit(event, quizzer) {
 		if (event.keyCode == quizzer.keyCode && quizzer.active) {
 			quizzer.className = "quizzer down";
 			dequeue(quizzer);
 		}
 	}
-	
+
 	function enqueue(quizzer) {
 		dequeue(quizzer);
 		if (jumps < MAX_JUMPS_PER_QUESTION) { // can't use standing.length due to sitting
@@ -124,7 +128,7 @@
 		}
 		updateMessages();
 	}
-	
+
 	function dequeue(quizzer) {
 		if (standing.includes(quizzer)) {
 			let index = standing.indexOf(quizzer);
@@ -137,13 +141,13 @@
 			jumps = 0;
 		}
 	}
-	
+
 	function updateMessages() {
 		for (let i = 0; i < quizzers.length; i++) {
 			updateMessage(quizzers[i]);
 		}
 	}
-	
+
 	function updateMessage(quizzer) {
 		let index = standing.indexOf(quizzer);
 		let message = "";
@@ -156,5 +160,5 @@
 		}
 		quizzer.lastChild.innerHTML = message;
 	}
-	
+
 })();
