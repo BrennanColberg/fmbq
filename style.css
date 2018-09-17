@@ -1,19 +1,16 @@
 body {
   text-align: center;
-}
-
-h2 {
-  font-size: 200%;
-  font-weight: bold;
-}
-
-#lights {
   display: flex;
   justify-content: space-around;
   height: 97vh;
   width: 90vw;
   margin-left: auto;
   margin-right: auto;
+}
+
+h2 {
+  font-size: 200%;
+  font-weight: bold;
 }
 
 .name {
@@ -34,7 +31,7 @@ h2 {
   border: 0.5vw solid black
 }
 
-.team>.name {
+.team > .name {
   padding: 5%;
   font-size: 500%;
 }
@@ -52,7 +49,7 @@ h2 {
 
 /* QUIZZER DIV (in index.html) */
 
-.quizzer>div {
+.quizzer > div {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -62,7 +59,7 @@ h2 {
   background-color: lightgray;
 }
 
-.quizzer.down>.name {
+.quizzer.down > .name {
   background-color: lightgray;
 }
 
@@ -70,25 +67,25 @@ h2 {
   background-color: gray;
 }
 
-.quizzer.up>.name {
+.quizzer.up > .name {
   background-color: gray;
 }
 
-.quizzer>img {
+.quizzer > img {
   position: absolute;
   width: 4vw;
   align-self: center;
 }
 
-.quizzer>img.left {
+.quizzer > img.left {
   left: -5.75vw;
 }
 
-.quizzer>img.right {
+.quizzer > img.right {
   right: -5.75vw;
 }
 
-.quizzer>.name {
+.quizzer > .name {
   width: 50%;
   font-size: 200%;
 }
